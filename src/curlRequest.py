@@ -14,7 +14,7 @@ f = open("songIdLog.txt", "r")
 spotify,track,mySong=str.split(f.read().strip()	, ':')
 f.close()
 
-response = requests.get("https://api.spotify.com/v1/tracks/" + str(mySong), headers=headers)
+response = requests.get("https://api.spotify.com/v1/tracks/" + str(mySong), headers=headers, timeout=60)
 
 # print(response.text)
 
